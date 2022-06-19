@@ -81,4 +81,4 @@ Django REST framework: <https://www.django-rest-framework.org/api-guide/parsers/
 
 GitHub: <https://github.com/vbabiy/djangorestframework-camel-case>
 
-PyPI: <https://pypi.org/project/djangorestframework-camel-case/T>
+PyPI: <https://pypi.org/project/djangorestframework-camel-case/>
