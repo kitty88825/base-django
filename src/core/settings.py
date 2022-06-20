@@ -49,6 +49,7 @@ THIRD_PARTY_APPS = [
     "drf_yasg",
     "rest_framework_simplejwt",
     "django_filters",
+    "corsheaders",
 ]
 
 LOCAL_APPS = ["apps.users"]
@@ -56,6 +57,7 @@ LOCAL_APPS = ["apps.users"]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
