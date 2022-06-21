@@ -31,7 +31,7 @@ DEBUG = env("DEBUG", default=False)
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
-CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS', default=[])
+CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[])
 
 # Application definition
 
@@ -174,5 +174,19 @@ REST_FRAMEWORK = {
     ],
     "JSON_UNDERSCOREIZE": {
         "no_underscore_before_number": True,
+    },
+}
+
+# drf-yasg
+SWAGGER_SETTINGS = {
+    # disable Django login as an authentication/authorization mechanism
+    "USE_SESSION_AUTH": False,
+    "SECURITY_DEFINITIONS": {
+        "JWT": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "Format: `Bearer <access_token>`",
+        },
     },
 }
