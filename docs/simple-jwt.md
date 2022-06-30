@@ -58,6 +58,22 @@ curl \
 }
 ```
 
+### Option Setting
+
+```python
+from datetime import timedelta
+
+JWT_ACCESS_TOKEN_LIFETIME = env("JWT_ACCESS_MINUTE", cast=int, default=5)
+JWT_REFRESH_TOKEN_LIFETIME = env("JWT_REFRESH_HOUR", cast=float, default=24)
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=JWT_ACCESS_TOKEN_LIFETIME),
+    "REFRESH_TOKEN_LIFETIME": timedelta(hours=JWT_REFRESH_TOKEN_LIFETIME),
+    "ROTATE_REFRESH_TOKENS": True,  # 若為 True，則重新整理後新的 refresh_token 有更新的有效時間
+    "UPDATE_LAST_LOGIN": True,  # 若為 True，auth_user 表中的 last_login 欄位在登錄時會更新
+}
+```
+
 ## Documentation
 
 GitHub: <https://github.com/jazzband/djangorestframework-simplejwt>
