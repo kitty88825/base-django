@@ -34,7 +34,7 @@ api_urlpatterns = [
     # Simple JWT
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
-    path("users/", include("apps.users.urls")),
+    path("users/", include("app.users.urls")),
 ]
 
 urlpatterns = [
